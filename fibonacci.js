@@ -6,35 +6,35 @@ console.log("Fibonacci Sequence\nAssignment #1");
 // Function #1: Using Iteration
 //
 
-const fibsIteration = (number) => {
+const fibsIteration = (num) => {
   // create an array
-  let fib = [];
+  let arr = [];
   // loop "number" of times
-  for (let i = 0; i < number; i++) {
+  for (let i = 0; i < num; i++) {
     // if i = 0 or 1, push those to array
     if (i === 0 || i === 1) {
-      fib.push(i);
+      arr.push(i);
       continue;
     }
     // else push fib[i-2] + fib[i-1]
-    fib.push(fib[i - 2] + fib[i - 1]);
+    arr.push(arr[i - 2] + arr[i - 1]);
   }
   // return array
-  return fib;
+  return arr;
 };
 
 //
 // Function #2: Using Recursion
 //
 
-const fibsRecursive = (number, array = []) => {
-  if (number === 0) {
-    return array;
-  } else if (array.length === 0) return fibsRecursive(number - 2, [0, 1]);
+const fibsRecursive = (num, arr = []) => {
+  if (num === 0) {
+    return arr;
+  } else if (arr.length === 0) return fibsRecursive(num - 2, [0, 1]);
   else {
-    return fibsRecursive(--number, [
-      ...array,
-      array[array.length - 2] + array[array.length - 1],
+    return fibsRecursive(--num, [
+      ...arr,
+      arr[arr.length - 2] + arr[arr.length - 1],
     ]);
   }
 };
