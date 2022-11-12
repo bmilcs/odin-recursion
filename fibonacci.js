@@ -27,6 +27,18 @@ const fibsIteration = (number) => {
 // Function #2: Using Recursion
 //
 
+const fibsRecursive = (number, array = []) => {
+  if (number === 0) {
+    return array;
+  } else if (array.length === 0) return fibsRecursive(number - 2, [0, 1]);
+  else {
+    return fibsRecursive(--number, [
+      ...array,
+      array[array.length - 2] + array[array.length - 1],
+    ]);
+  }
+};
+
 //
 // Print function
 //
@@ -37,4 +49,6 @@ const printFib = (number, callback) => {
 };
 
 printFib(5, fibsIteration);
+printFib(5, fibsRecursive);
 printFib(8, fibsIteration);
+printFib(8, fibsRecursive);
