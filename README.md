@@ -9,11 +9,22 @@ Welcome to Bryan Miller's Recursion Project, the [thirteenth assignment](https:/
 
 ## Summary
 
-In progress
+Of all topics covered in the Odin Project, I feel **recursion** is by far the most challenging concept to grasp and utilize. Completing this assignment was a humbling experience.
+
+The Fibonacci Sequence functions weren't too bad and I was able to hammer them out on my own. Merge Sort, on the other hand, required a lot of research and struggling. Ultimately, I was able to finish the assignment with the help of others.
+
+## Screenshots
+
+> Fibonacci Sequence Output
+
+![Fibonacci Sequence](./img/fibonacci.png)
+
+> Merge Sort Output
+
+![Merge Sort](./img/merge-sort.png)
 
 ## Links
 
-- [Live Demo](https://bmilcs.github.io/odin-recursion/)
 - [My Odin Project Progress](https://github.com/bmilcs/odin-project)
 
 ## Deployment
