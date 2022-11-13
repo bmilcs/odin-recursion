@@ -2,7 +2,7 @@ console.log("\nmerge sort\nassignment #2\n");
 
 const mergeSort = (arr) => {
   if (!Array.isArray(arr) || arr.length === 0) {
-    console.log("Error: An array with at least one value is required!");
+    return "Error: An array with at least one value is required!";
   }
 
   if (arr.length < 2) {
