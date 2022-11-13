@@ -21,4 +21,8 @@ In progress
 ```sh
 # clone repo
 git clone https://github.com/bmilcs/odin-recursion
+
+# run scripts:
+node fibonacci.js
+node merge-sort.js
 ```
