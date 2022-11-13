@@ -1,12 +1,10 @@
-// FIBONACCI SEQUENCE
-
-console.log("Fibonacci Sequence\nAssignment #1");
+console.log("\nfibonacci sequence\nassignment #1\n");
 
 //
-// Function #1: Using Iteration
+// Function #1: Iterative Fibonacci
 //
 
-const fibsIteration = (num) => {
+const fibIteration = (num) => {
   // create an array
   let arr = [];
   // loop "number" of times
@@ -24,15 +22,21 @@ const fibsIteration = (num) => {
 };
 
 //
-// Function #2: Using Recursion
+// Function #2: Recursive Fibonacci
 //
 
-const fibsRecursive = (num, arr = []) => {
+const fibRecursive = (num, arr = []) => {
+  // if num is zero, return array
   if (num === 0) {
     return arr;
-  } else if (arr.length === 0) return fibsRecursive(num - 2, [0, 1]);
+    // else if arr.length is zero, call fibsRecursive with
+    // num - 2 (first 2 numbers) & [0,1] - first 2 numbers of the fib sequence
+  } else if (arr.length === 0) return fibRecursive(num - 2, [0, 1]);
   else {
-    return fibsRecursive(--num, [
+    // else call fibsRecursive with num - 1
+    //  spread the original array out & push the
+    //  sum of the last 2 numbers
+    return fibRecursive(--num, [
       ...arr,
       arr[arr.length - 2] + arr[arr.length - 1],
     ]);
@@ -40,15 +44,30 @@ const fibsRecursive = (num, arr = []) => {
 };
 
 //
-// Print function
+// Print functions
 //
 
 const printFib = (number, callback) => {
-  console.log(`\nInput: ${number}`);
-  console.log(callback(number));
+  console.log(`in:\t${number}`);
+  console.log(`out:\t${callback(number)}\n`);
 };
 
-printFib(5, fibsIteration);
-printFib(5, fibsRecursive);
-printFib(8, fibsIteration);
-printFib(8, fibsRecursive);
+const printTitle = (title) => {
+  console.log("-----------------------------");
+  console.log(title);
+  console.log("-----------------------------\n");
+};
+
+//
+// Sample Tests
+//
+
+printTitle("iterative fibonacci:");
+printFib(5, fibIteration);
+printFib(8, fibIteration);
+printFib(15, fibIteration);
+
+printTitle("recursive fibonacci:");
+printFib(5, fibRecursive);
+printFib(8, fibRecursive);
+printFib(15, fibRecursive);
