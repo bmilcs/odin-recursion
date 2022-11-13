@@ -64,7 +64,7 @@ const isPrimeFactor = (num, x = 2) => {
   return isPrimeFactor(num, x + 1);
 };
 
-printTitle("is a prime factor of a number");
+printTitle("is a prime factor");
 printInOut(5, isPrimeFactor);
 printInOut(29, isPrimeFactor);
 printInOut(30, isPrimeFactor);
