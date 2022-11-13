@@ -1,6 +1,10 @@
 console.log("\nmerge sort\nassignment #2\n");
 
 const mergeSort = (arr) => {
+  if (!Array.isArray(arr) || arr.length === 0) {
+    console.log("Error: An array with at least one value is required!");
+  }
+
   if (arr.length < 2) {
     // base case: array has a single index, return array
     return arr;
@@ -51,8 +55,10 @@ const printInOut = (input, callback) => {
 // Sample Tests
 //
 
+const emptyArray = [];
 const arrayOne = [1, 9, 3, 2, 5, 7, 4, 1, 1];
-const arrayTwo = [20, 31, 55, 11, 6, 2, 1];
+const arrayTwo = [20, 31, 55, 11, 6, 89, 19, 77, 555, 101];
 
+printInOut(emptyArray, mergeSort);
 printInOut(arrayOne, mergeSort);
 printInOut(arrayTwo, mergeSort);
