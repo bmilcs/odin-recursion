@@ -1,26 +1,20 @@
 console.log("\nmerge sort\nassignment #2\n");
 
 const mergeSort = (arr) => {
-  if (!Array.isArray(arr) || arr.length === 0) {
+  if (!Array.isArray(arr) || arr.length === 0)
     return "Error: An array with at least one value is required!";
-  }
 
-  if (arr.length < 2) {
-    // base case: array has a single index, return array
-    return arr;
-  } else {
-    // get low, mid, high
-    const low = 0;
-    const high = arr.length;
-    const mid = Math.floor(high / 2);
+  // base case: array has a single element
+  if (arr.length < 2) return arr;
 
-    // split array into 2 sides
-    const left = arr.slice(low, mid);
-    const right = arr.slice(mid, high);
+  // get middle point
+  const mid = arr.length / 2;
 
-    // merge the result of mergeSort left & right
-    return merge(mergeSort(left), mergeSort(right));
-  }
+  // remove left side of array
+  const left = arr.splice(0, mid);
+
+  // merge the result of mergeSort left & right
+  return merge(mergeSort(left), mergeSort(arr));
 };
 
 const merge = (left, right) => {
@@ -30,16 +24,11 @@ const merge = (left, right) => {
   // have numbers left, push the lesser # of index 0 to array
   // and remove it from left/array array
   while (left.length && right.length) {
-    if (left[0] <= right[0]) {
-      arr.push(left.shift());
-    } else arr.push(right.shift());
+    left[0] <= right[0] ? arr.push(left.shift()) : arr.push(right.shift());
   }
 
   // if any leftover numbers exist, push them to the array
-  while (left.length) arr.push(left.shift());
-  while (right.length) arr.push(right.shift());
-
-  return arr;
+  return [...arr, ...left, ...right];
 };
 
 //
